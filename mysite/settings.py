@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'psycopg2',
     'polls',
     'blog',
+    'accounts',
 ]
 
 MIDDLEWARE = [
