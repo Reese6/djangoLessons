@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -6,7 +7,8 @@ urlpatterns = [
     # url(r'^login/$', views.user_login, name='login'),
 
     # login / logout urls
-    url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
-    url(r'^logout-then-login/$', 'django.contrib.auth.views.logout_then_login', name='logout_then_login'),
+    path('login$', django.contrib.auth.views.login, name='login'),
+    path('logout/', django.contrib.auth.views.logout, name='logout'),
+    path('logout-then-login/', django.contrib.auth.views.logout_then_login, name='logout_then_login'),
+    path('', views.dashboard, name='dashboard'),
 ]
